@@ -13,14 +13,8 @@ export class MainComponent {
   tasks = [
     {
       id: 1,
-      title: 'Task',
+      title: 'Tareas',
       route: '/tareas',
-      icon: 'dashboard',
-    },
-    {
-      id: 2,
-      title: 'Art',
-      route: '/arts',
       icon: 'dashboard',
     }
   ]

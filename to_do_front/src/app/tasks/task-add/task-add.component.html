@@ -1,2 +1,17 @@
-<p>task-add works!</p>
-<button (click)="save()">Save</button>
+<div class="container mt-4">
+    <h2>Agregar Tarea</h2>
+    <form (submit)="save()" class="col-md-6">
+      <div class="mb-3">
+        <label for="name" class="form-label">Nombre:</label>
+        <input type="text" id="name" name="name" [(ngModel)]="newTask.name" class="form-control" required>
+      </div>
+      
+      <div class="mb-3">
+        <label for="description" class="form-label">Descripción:</label>
+        <textarea id="description" name="description" [(ngModel)]="newTask.description" class="form-control" rows="5" required></textarea>
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Agregar tarea</button>
+      <button type="button" (click)="redirect()" class="btn btn-secondary ms-2">Volver</button>
+    </form>
+  </div>

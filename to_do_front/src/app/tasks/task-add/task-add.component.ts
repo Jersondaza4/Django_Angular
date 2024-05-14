@@ -2,17 +2,21 @@ import { Component, OnInit } from '@angular/core';
 import { TaskInterface } from '../../dataservice/task';
 import { DataService } from '../../dataservice/data.service';
 import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms'; // Importa FormsModule
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-task-add',
   standalone: true,
-  imports: [],
+  imports: [
+    CommonModule,
+    FormsModule],
   templateUrl: './task-add.component.html',
   styleUrl: './task-add.component.css'
 })
 export class TasksAddComponent implements OnInit {
 
-  newTask: TaskInterface = { id: 5, name: 'hi', description: 'ho' }; // Nueva tarea a agregar
+  newTask: TaskInterface = { id: 0, name: '', description: '' }; // Nueva tarea a agregar
 
   constructor(
     private dataService: DataService,

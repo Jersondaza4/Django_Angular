@@ -1,17 +1,20 @@
-<p>tasks works!</p>
 <div class="position-sticky">
-    <ul class="nav flex-column">
-      @for (task of taskList; track task.id){
-      <li class="nav-item">
-        <p>{{ task.name }}</p>
-        <button (click)="deleteTask(task.id)">delete</button>
-      </li>
+    <ul class="nav flex-column margin-block">
+      @for (task of taskList; track task.id)
+      {
+        <div class="card mb-3 border-primary">
+          <div class="card-body">
+            <h5 class="card-title">{{ task.name }}</h5>
+            <p class="card-text">{{ task.description }}</p>
+            <button class="btn btn-danger me-2" (click)="deleteTask(task.id)">Delete</button>
+          </div>
+        </div>
       }
     </ul>
-</div>
+  </div>
 
 <div class="col-lg-6">
     <router-outlet></router-outlet>
 </div>
 
-<a mat-fab color="accent" class="mat-fab-bottom-right fixed z-3" [routerLink]="['add']">add</a>
+<a [routerLink]="['add']">add</a>
