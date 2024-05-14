@@ -1,1 +1,17 @@
 <p>tasks works!</p>
+<div class="position-sticky">
+    <ul class="nav flex-column">
+      @for (task of taskList; track task.id){
+      <li class="nav-item">
+        <p>{{ task.name }}</p>
+        <button (click)="deleteTask(task.id)">delete</button>
+      </li>
+      }
+    </ul>
+</div>
+
+<div class="col-lg-6">
+    <router-outlet></router-outlet>
+</div>
+
+<a mat-fab color="accent" class="mat-fab-bottom-right fixed z-3" [routerLink]="['add']">add</a>
