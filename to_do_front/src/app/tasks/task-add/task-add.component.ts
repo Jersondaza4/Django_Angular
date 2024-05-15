@@ -16,7 +16,7 @@ import { CommonModule } from '@angular/common';
 })
 export class TasksAddComponent implements OnInit {
 
-  newTask: TaskInterface = { id: 0, name: '', description: '' }; // Nueva tarea a agregar
+  newTask: TaskInterface = { id: 0, name: '', description: '', priority: '' }; // Nueva tarea a agregar
 
   constructor(
     private dataService: DataService,
@@ -36,7 +36,7 @@ export class TasksAddComponent implements OnInit {
   }
 
   redirect(): void {
-    this.router.navigate(['./tasks']);
+    this.router.navigate(['./tareas']);
   }
 
   ngOnInit(): void {

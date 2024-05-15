@@ -1,12 +1,14 @@
-<div class="position-sticky">
-    <ul class="nav flex-column margin-block">
+<div class="container mt-5">
+    <ul class="nav flex-row">
       @for (task of taskList; track task.id)
       {
-        <div class="card mb-3 border-primary">
+        <div class="card border-primary col-sm-6 mb-1">
           <div class="card-body">
             <h5 class="card-title">{{ task.name }}</h5>
             <p class="card-text">{{ task.description }}</p>
-            <button class="btn btn-danger me-2" (click)="deleteTask(task.id)">Delete</button>
+            <div class="text-center">
+                <button class="btn btn-danger" (click)="deleteTask(task.id)">Delete</button>
+            </div>
           </div>
         </div>
       }
@@ -17,4 +19,6 @@
     <router-outlet></router-outlet>
 </div>
 
-<a [routerLink]="['add']">add</a>
+<div class="container text-center mt-4">
+    <a class="btn btn-success col-md-6" [routerLink]="['add']">add</a>
+</div>

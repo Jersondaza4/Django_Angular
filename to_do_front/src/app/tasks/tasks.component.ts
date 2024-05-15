@@ -14,7 +14,7 @@ import { RouterOutlet } from '@angular/router';
 export class TasksComponent implements OnInit {
 
   taskList: TaskInterface[] = [];
-  newTask: TaskInterface = { id: 0, name: '', description: '' }; 
+  newTask: TaskInterface = { id: 0, name: '', description: '', priority: '' }; 
 
   constructor(private dataService: DataService) {}
 
@@ -52,7 +52,7 @@ export class TasksComponent implements OnInit {
         console.log('Tarea agregada exitosamente:', res);
         this.getTasks(); // Actualizar la lista de tareas después de agregar una nueva tarea
         // También puedes realizar otras acciones después de agregar la tarea, como limpiar el formulario
-        this.newTask = { id: 0, name: '', description: '' }; // Limpiar el objeto newTask
+        this.newTask = { id: 0, name: '', description: '' , priority: ''}; // Limpiar el objeto newTask
       },
       error: (err) => {
         console.log('Error al agregar la tarea:', err);
